@@ -1,0 +1,316 @@
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --accent-color: #4fc3f7;
+    --background-color: #f5f7fa;
+    --text-color: #333;
+    --light-text: #666;
+    --focus-color: #4caf50;
+    --distracted-color: #f44336;
+    --status-initializing: #ff9800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ad-container {
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.stopwatch-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+.stopwatch-display {
+    font-size: 3.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--status-initializing);
+}
+
+.status-text {
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#startBtn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#startBtn:hover {
+    background-color: var(--secondary-color);
+}
+
+#pauseBtn {
+    background-color: #ff9800;
+    color: white;
+}
+
+#pauseBtn:hover {
+    background-color: #f57c00;
+}
+
+#resetBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#resetBtn:hover {
+    background-color: #d32f2f;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.camera-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+video, canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-box {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
+}
+
+.stat-box p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#focusPercentage {
+    color: var(--primary-color);
+}
+
+.instructions {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h2 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.instructions li {
+    margin-bottom: 0.5rem;
+}
+
+.privacy-note {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+footer {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .stopwatch-display {
+        font-size: 2.5rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .stopwatch-display {
+        font-size: 2rem;
+    }
+    
+    .camera-container {
+        max-width: 100%;
+    }
+}
+
+/* Status colors */
+.status-focus .status-dot {
+    background-color: var(--focus-color);
+}
+
+.status-focus .status-text {
+    color: var(--focus-color);
+}
+
+.status-distracted .status-dot {
+    background-color: var(--distracted-color);
+}
+
+.status-distracted .status-text {
+    color: var(--distracted-color);
+}
+
+.status-initializing .status-dot {
+    background-color: var(--status-initializing);
+}
+
+.status-initializing .status-text {
+    color: var(--status-initializing);
+}

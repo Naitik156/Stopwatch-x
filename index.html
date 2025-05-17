@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Study Focus Stopwatch - Track your focused study time with AI-powered face detection. Pauses automatically when you're distracted.">
+    <meta name="keywords" content="study timer, focus timer, productivity tool, study tracker, face detection timer">
+    <meta name="author" content="Study Focus Tools">
+    <title>Study Focus Stopwatch | AI-Powered Study Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Study Focus Stopwatch</h1>
+        <p>Track your focused study time with AI detection</p>
+    </header>
+
+    <main>
+        <div class="ad-container">
+            <!-- AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="container">
+            <div class="stopwatch-container">
+                <div class="stopwatch-display" id="display">00:00:00</div>
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Initializing...</span>
+                </div>
+                <div class="controls">
+                    <button id="startBtn">Start</button>
+                    <button id="pauseBtn" disabled>Pause</button>
+                    <button id="resetBtn" disabled>Reset</button>
+                </div>
+            </div>
+
+            <div class="camera-container">
+                <video id="video" width="400" height="300" autoplay muted></video>
+                <canvas id="canvas" width="400" height="300"></canvas>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>Focused Time</h3>
+                    <p id="focusedTime">00:00:00</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Distracted Time</h3>
+                    <p id="distractedTime">00:00:00</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Focus Percentage</h3>
+                    <p id="focusPercentage">0%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-container">
+            <!-- AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="instructions">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Click "Start" to begin tracking your study session</li>
+                <li>Keep your face visible to the camera</li>
+                <li>The timer runs when you're focused (head down, looking at screen)</li>
+                <li>Timer pauses automatically if you look away or leave the frame</li>
+                <li>Click "Pause" to manually pause or "Reset" to start over</li>
+            </ol>
+            <div class="privacy-note">
+                <p><strong>Privacy Note:</strong> All face processing happens in your browser. No images or video are stored or sent to any server.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Study Focus Stopwatch. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+    </footer>
+
+    <script src="face-api.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
